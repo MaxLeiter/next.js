@@ -19,10 +19,9 @@ createNextDescribe(
   {
     files: __dirname,
     dependencies: {
-      '@next/font': 'canary',
       react: 'latest',
       'react-dom': 'latest',
-      swr: '2.0.0-rc.0',
+      swr: 'latest',
     },
     packageJson: {
       scripts: {
@@ -37,7 +36,7 @@ createNextDescribe(
     buildCommand: 'yarn build',
     skipDeployment: true,
   },
-  ({ next }) => {
+  ({ next, isNextDev }) => {
     it('should be able to opt-out 3rd party packages being bundled in server components', async () => {
       await next.fetch('/react-server/optout').then(async (response) => {
         const result = await resolveStreamResponse(response)
@@ -143,7 +142,7 @@ createNextDescribe(
       ).toBe('rgb(255, 0, 0)')
     })
 
-    it('should handle external @next/font', async () => {
+    it('should handle external next/font', async () => {
       const browser = await next.browser('/font')
 
       expect(
@@ -177,6 +176,48 @@ createNextDescribe(
         const v2 = html.match(/External React Version: ([^<]+)</)[1]
         expect(v1).toBe(v2)
       })
+    })
+
+    it('should export client module references in esm', async () => {
+      const html = await next.render('/esm-client-ref')
+      expect(html).toContain('hello')
+    })
+
+    it('should support exporting multiple star re-exports', async () => {
+      const html = await next.render('/wildcard')
+      expect(html).toContain('Foo')
+    })
+
+    if (isNextDev) {
+      it('should error for wildcard exports of client module references in esm', async () => {
+        const page = 'app/esm-client-ref/page.js'
+        const pageSource = await next.readFile(page)
+
+        try {
+          await next.patchFile(
+            page,
+            pageSource.replace(
+              "'client-esm-module'",
+              "'client-esm-module-wildcard'"
+            )
+          )
+          await next.render('/esm-client-ref')
+        } finally {
+          await next.patchFile(page, pageSource)
+        }
+
+        expect(next.cliOutput).toInclude(
+          `It's currently unsupported to use "export *" in a client boundary. Please use named exports instead.`
+        )
+      })
+    }
+
+    it('should have proper tree-shaking for known modules in CJS', async () => {
+      const html = await next.render('/test-middleware')
+      expect(html).toContain('it works')
+
+      const middlewareBundle = await next.readFile('.next/server/middleware.js')
+      expect(middlewareBundle).not.toContain('image-response')
     })
   }
 )
