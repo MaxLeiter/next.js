@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 25
-      - run: npm i -g pnpm@${PNPM_VERSION}
+      - run: npm i -g pnpm@${{ env.PNPM_VERSION }}
       - id: get-store-path
         run: echo STORE_PATH=$(pnpm store path) >> $GITHUB_OUTPUT
       - uses: actions/cache@v3
@@ -38,9 +38,10 @@ jobs:
       - run: pnpm run update-google-fonts
       - name: Commit and push changes
         run: |
+          git fetch --all
           git config user.name "vercel-release-bot"
           git config user.email "infra+release@vercel.com"
-          git checkout -b automated/update-google-fonts
+          git checkout automated/update-google-fonts 2>/dev/null || git checkout -b automated/update-google-fonts
           git add -A
           git commit -m "Update Google Fonts"
           git push --set-upstream origin automated/update-google-fonts
