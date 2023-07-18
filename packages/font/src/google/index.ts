@@ -159,6 +159,18 @@ export declare function Advent_Pro<
   subsets?: Array<'cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext'>
   axes?: 'wdth'[]
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Agdasima<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | '700' | Array<'400' | '700'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Aguafina_Script<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -170,6 +182,25 @@ export declare function Aguafina_Script<
   fallback?: string[]
   adjustFontFallback?: boolean
   subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Akatab<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight:
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | Array<'400' | '500' | '600' | '700' | '800' | '900'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext' | 'tifinagh'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Akaya_Kanadaka<
   T extends CssVariable | undefined = undefined
@@ -423,15 +454,28 @@ export declare function Alegreya_Sans_SC<
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Aleo<
   T extends CssVariable | undefined = undefined
->(options: {
-  weight: '300' | '400' | '700' | Array<'300' | '400' | '700'>
+>(options?: {
+  weight?:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | 'variable'
+    | Array<
+        '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
+      >
   style?: 'normal' | 'italic' | Array<'normal' | 'italic'>
   display?: Display
   variable?: T
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'latin' | 'latin-ext'>
+  subsets?: Array<'latin' | 'latin-ext' | 'vietnamese'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Alex_Brush<
   T extends CssVariable | undefined = undefined
@@ -1922,6 +1966,18 @@ export declare function Babylonica<
   adjustFontFallback?: boolean
   subsets?: Array<'latin' | 'latin-ext' | 'vietnamese'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Bacasime_Antique<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Bad_Script<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -2442,6 +2498,18 @@ export declare function Bebas_Neue<
   T extends CssVariable | undefined = undefined
 >(options: {
   weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Belanosima<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | '600' | '700' | Array<'400' | '600' | '700'>
   style?: 'normal' | Array<'normal'>
   display?: Display
   variable?: T
@@ -3565,6 +3633,18 @@ export declare function Cantata_One<
   subsets?: Array<'latin' | 'latin-ext'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Cantora_One<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Caprasimo<
   T extends CssVariable | undefined = undefined
 >(options: {
   weight: '400' | Array<'400'>
@@ -4819,8 +4899,31 @@ export declare function DM_Mono<
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function DM_Sans<
   T extends CssVariable | undefined = undefined
->(options: {
-  weight: '400' | '500' | '700' | Array<'400' | '500' | '700'>
+>(options?: {
+  weight?:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+    | 'variable'
+    | Array<
+        | '100'
+        | '200'
+        | '300'
+        | '400'
+        | '500'
+        | '600'
+        | '700'
+        | '800'
+        | '900'
+        | '1000'
+      >
   style?: 'normal' | 'italic' | Array<'normal' | 'italic'>
   display?: Display
   variable?: T
@@ -4828,6 +4931,7 @@ export declare function DM_Sans<
   fallback?: string[]
   adjustFontFallback?: boolean
   subsets?: Array<'latin' | 'latin-ext'>
+  axes?: 'opsz'[]
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function DM_Serif_Display<
   T extends CssVariable | undefined = undefined
@@ -10818,6 +10922,51 @@ export declare function Luckiest_Guy<
   adjustFontFallback?: boolean
   subsets?: Array<'latin'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Lugrasimo<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Lumanosimo<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Lunasima<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | '700' | Array<'400' | '700'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<
+    | 'cyrillic'
+    | 'cyrillic-ext'
+    | 'greek'
+    | 'greek-ext'
+    | 'hebrew'
+    | 'latin'
+    | 'latin-ext'
+    | 'vietnamese'
+  >
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Lusitana<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -12554,6 +12703,18 @@ export declare function Nanum_Pen_Script<
   adjustFontFallback?: boolean
   subsets?: Array<'latin'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Narnoor<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'gunjala-gondi' | 'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Neonderthaw<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -13372,6 +13533,18 @@ export declare function Noto_Sans_Cypriot<
   adjustFontFallback?: boolean
   subsets?: Array<'cypriot'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Noto_Sans_Cypro_Minoan<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'cypro-minoan' | 'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Deseret<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -13447,14 +13620,14 @@ export declare function Noto_Sans_Display<
 export declare function Noto_Sans_Duployan<
   T extends CssVariable | undefined = undefined
 >(options: {
-  weight: '400' | Array<'400'>
+  weight: '400' | '700' | Array<'400' | '700'>
   style?: 'normal' | Array<'normal'>
   display?: Display
   variable?: T
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'duployan'>
+  subsets?: Array<'duployan' | 'latin' | 'latin-ext'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Egyptian_Hieroglyphs<
   T extends CssVariable | undefined = undefined
@@ -13703,7 +13876,7 @@ export declare function Noto_Sans_Hatran<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'hatran'>
+  subsets?: Array<'hatran' | 'latin' | 'latin-ext'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Hebrew<
   T extends CssVariable | undefined = undefined
@@ -14173,7 +14346,7 @@ export declare function Noto_Sans_Marchen<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'marchen'>
+  subsets?: Array<'latin' | 'latin-ext' | 'marchen'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Masaram_Gondi<
   T extends CssVariable | undefined = undefined
@@ -14276,7 +14449,7 @@ export declare function Noto_Sans_Meroitic<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'meroitic'>
+  subsets?: Array<'latin' | 'latin-ext' | 'meroitic'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Miao<
   T extends CssVariable | undefined = undefined
@@ -14418,7 +14591,7 @@ export declare function Noto_Sans_Nabataean<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'nabataean'>
+  subsets?: Array<'latin' | 'latin-ext' | 'nabataean'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Nag_Mundari<
   T extends CssVariable | undefined = undefined
@@ -14544,7 +14717,7 @@ export declare function Noto_Sans_Old_Italic<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'old-italic'>
+  subsets?: Array<'latin' | 'latin-ext' | 'old-italic'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Old_North_Arabian<
   T extends CssVariable | undefined = undefined
@@ -14556,7 +14729,7 @@ export declare function Noto_Sans_Old_North_Arabian<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'old-north-arabian'>
+  subsets?: Array<'latin' | 'latin-ext' | 'old-north-arabian'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Old_Permic<
   T extends CssVariable | undefined = undefined
@@ -14568,7 +14741,7 @@ export declare function Noto_Sans_Old_Permic<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'old-permic'>
+  subsets?: Array<'cyrillic-ext' | 'latin' | 'latin-ext' | 'old-permic'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Old_Persian<
   T extends CssVariable | undefined = undefined
@@ -14580,7 +14753,7 @@ export declare function Noto_Sans_Old_Persian<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'old-persian'>
+  subsets?: Array<'latin' | 'latin-ext' | 'old-persian'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Old_Sogdian<
   T extends CssVariable | undefined = undefined
@@ -14592,7 +14765,7 @@ export declare function Noto_Sans_Old_Sogdian<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'old-sogdian'>
+  subsets?: Array<'latin' | 'latin-ext' | 'old-sogdian'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Old_South_Arabian<
   T extends CssVariable | undefined = undefined
@@ -14604,7 +14777,7 @@ export declare function Noto_Sans_Old_South_Arabian<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'old-south-arabian'>
+  subsets?: Array<'latin' | 'latin-ext' | 'old-south-arabian'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Old_Turkic<
   T extends CssVariable | undefined = undefined
@@ -14690,7 +14863,7 @@ export declare function Noto_Sans_Palmyrene<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'palmyrene'>
+  subsets?: Array<'latin' | 'latin-ext' | 'palmyrene'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Pau_Cin_Hau<
   T extends CssVariable | undefined = undefined
@@ -14738,7 +14911,7 @@ export declare function Noto_Sans_Psalter_Pahlavi<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'psalter-pahlavi'>
+  subsets?: Array<'latin' | 'latin-ext' | 'psalter-pahlavi'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Rejang<
   T extends CssVariable | undefined = undefined
@@ -14793,7 +14966,7 @@ export declare function Noto_Sans_Samaritan<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'samaritan'>
+  subsets?: Array<'latin' | 'latin-ext' | 'samaritan'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Saurashtra<
   T extends CssVariable | undefined = undefined
@@ -14891,7 +15064,7 @@ export declare function Noto_Sans_Sogdian<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'sogdian'>
+  subsets?: Array<'latin' | 'latin-ext' | 'sogdian'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Sora_Sompeng<
   T extends CssVariable | undefined = undefined
@@ -14991,6 +15164,31 @@ export declare function Noto_Sans_Symbols_2<
   subsets?: Array<'latin' | 'latin-ext' | 'symbols'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Syriac<
+  T extends CssVariable | undefined = undefined
+>(options?: {
+  weight?:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | 'variable'
+    | Array<
+        '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
+      >
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext' | 'syriac'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Noto_Sans_Syriac_Eastern<
   T extends CssVariable | undefined = undefined
 >(options?: {
   weight?:
@@ -15148,7 +15346,7 @@ export declare function Noto_Sans_Tamil_Supplement<
   preload?: boolean
   fallback?: string[]
   adjustFontFallback?: boolean
-  subsets?: Array<'tamil-supplement'>
+  subsets?: Array<'latin' | 'latin-ext' | 'tamil-supplement'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Sans_Tangsa<
   T extends CssVariable | undefined = undefined
@@ -15774,6 +15972,18 @@ export declare function Noto_Serif_Kannada<
   adjustFontFallback?: boolean
   subsets?: Array<'kannada' | 'latin' | 'latin-ext'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Noto_Serif_Khitan_Small_Script<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'khitan-small-script' | 'latin' | 'latin-ext'>
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Serif_Khmer<
   T extends CssVariable | undefined = undefined
 >(options?: {
@@ -15843,6 +16053,18 @@ export declare function Noto_Serif_Lao<
   adjustFontFallback?: boolean
   subsets?: Array<'lao' | 'latin' | 'latin-ext'>
   axes?: 'wdth'[]
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Noto_Serif_Makasar<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext' | 'makasar'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Serif_Malayalam<
   T extends CssVariable | undefined = undefined
@@ -15928,6 +16150,18 @@ export declare function Noto_Serif_Oriya<
   fallback?: string[]
   adjustFontFallback?: boolean
   subsets?: Array<'latin' | 'latin-ext' | 'oriya'>
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Noto_Serif_Ottoman_Siyaq<
+  T extends CssVariable | undefined = undefined
+>(options: {
+  weight: '400' | Array<'400'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<'latin' | 'latin-ext' | 'ottoman-siyaq-numbers'>
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Noto_Serif_SC<
   T extends CssVariable | undefined = undefined
@@ -18874,7 +19108,7 @@ export declare function Rubik<
   fallback?: string[]
   adjustFontFallback?: boolean
   subsets?: Array<
-    'cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext'
+    'arabic' | 'cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext'
   >
 }): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Rubik_80s_Fade<
@@ -21375,6 +21609,29 @@ export declare function Teko<
   adjustFontFallback?: boolean
   subsets?: Array<'devanagari' | 'latin' | 'latin-ext'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Tektur<
+  T extends CssVariable | undefined = undefined
+>(options?: {
+  weight?:
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | 'variable'
+    | Array<'400' | '500' | '600' | '700' | '800' | '900'>
+  style?: 'normal' | Array<'normal'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<
+    'cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext' | 'vietnamese'
+  >
+  axes?: 'wdth'[]
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Telex<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -22335,6 +22592,29 @@ export declare function Vibur<
   adjustFontFallback?: boolean
   subsets?: Array<'latin'>
 }): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Victor_Mono<
+  T extends CssVariable | undefined = undefined
+>(options?: {
+  weight?:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | 'variable'
+    | Array<'100' | '200' | '300' | '400' | '500' | '600' | '700'>
+  style?: 'normal' | 'italic' | Array<'normal' | 'italic'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<
+    'cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext' | 'vietnamese'
+  >
+}): T extends undefined ? NextFont : NextFontWithVariable
 export declare function Vidaloka<
   T extends CssVariable | undefined = undefined
 >(options: {
@@ -22848,6 +23128,123 @@ export declare function Ysabeau<
         | '1000'
       >
   style?: 'normal' | 'italic' | Array<'normal' | 'italic'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<
+    'cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext' | 'vietnamese'
+  >
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Ysabeau_Infant<
+  T extends CssVariable | undefined = undefined
+>(options?: {
+  weight?:
+    | '1'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+    | 'variable'
+    | Array<
+        | '1'
+        | '100'
+        | '200'
+        | '300'
+        | '400'
+        | '500'
+        | '600'
+        | '700'
+        | '800'
+        | '900'
+        | '1000'
+      >
+  style?: 'normal' | 'italic' | Array<'normal' | 'italic'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<
+    'cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext' | 'vietnamese'
+  >
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Ysabeau_Office<
+  T extends CssVariable | undefined = undefined
+>(options?: {
+  weight?:
+    | '1'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+    | 'variable'
+    | Array<
+        | '1'
+        | '100'
+        | '200'
+        | '300'
+        | '400'
+        | '500'
+        | '600'
+        | '700'
+        | '800'
+        | '900'
+        | '1000'
+      >
+  style?: 'normal' | 'italic' | Array<'normal' | 'italic'>
+  display?: Display
+  variable?: T
+  preload?: boolean
+  fallback?: string[]
+  adjustFontFallback?: boolean
+  subsets?: Array<
+    'cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext' | 'vietnamese'
+  >
+}): T extends undefined ? NextFont : NextFontWithVariable
+export declare function Ysabeau_SC<
+  T extends CssVariable | undefined = undefined
+>(options?: {
+  weight?:
+    | '1'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+    | 'variable'
+    | Array<
+        | '1'
+        | '100'
+        | '200'
+        | '300'
+        | '400'
+        | '500'
+        | '600'
+        | '700'
+        | '800'
+        | '900'
+        | '1000'
+      >
+  style?: 'normal' | Array<'normal'>
   display?: Display
   variable?: T
   preload?: boolean
