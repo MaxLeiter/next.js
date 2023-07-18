@@ -1,14 +1,13 @@
-name: 'Update Google Fonts'
-
+---
+name: Update Google Fonts
 on:
   schedule:
-    # This runs once a week: https://crontab.guru/#0_0_*_*_0
-    - cron: '0 0 * * 0'
-  workflow_dispatch:
-
+    - cron: 0 0 * * 0
+  workflow_dispatch: null
 env:
   PNPM_VERSION: 7.24.3
   NODE_LTS_VERSION: 18
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   update-fonts:
@@ -19,16 +18,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_LTS_VERSION }}
           check-latest: true
-
       - uses: actions/checkout@v3
         with:
           fetch-depth: 25
-
       - run: npm i -g pnpm@${PNPM_VERSION}
-
       - id: get-store-path
         run: echo STORE_PATH=$(pnpm store path) >> $GITHUB_OUTPUT
-
       - uses: actions/cache@v3
         timeout-minutes: 5
         id: cache-pnpm-store
@@ -38,11 +33,8 @@ jobs:
           restore-keys: |
             pnpm-store-
             pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
-
       - run: pnpm install
-
       - run: pnpm run update-google-fonts
-
       - name: Commit and push changes
         run: |
           git config user.name "vercel-release-bot"
@@ -50,7 +42,6 @@ jobs:
           git add -A
           git commit -m "Update Google Fonts"
           git push
-
       - name: Open pull request
         run: |
           gh pr create --fill --body "Update Google Fonts"
