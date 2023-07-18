@@ -40,6 +40,7 @@ jobs:
         run: |
           git config user.name "vercel-release-bot"
           git config user.email "infra+release@vercel.com"
+          git checkout -b automated/update-google-fonts
           git add -A
           git commit -m "Update Google Fonts"
           git push
