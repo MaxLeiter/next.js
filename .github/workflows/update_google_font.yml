@@ -43,7 +43,7 @@ jobs:
           git checkout -b automated/update-google-fonts
           git add -A
           git commit -m "Update Google Fonts"
-          git push
+          git push --set-upstream origin automated/update-google-fonts
       - name: Open pull request
         run: |
           gh pr create --fill --body "Update Google Fonts"
