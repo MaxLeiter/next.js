@@ -38,7 +38,8 @@ jobs:
       - run: pnpm run update-google-fonts
       - name: Commit and push changes
         run: |
-          git fetch --all
+          git fetch origin canary
+          git fetch origin automated/update-google-fonts
           git config user.name "vercel-release-bot"
           git config user.email "infra+release@vercel.com"
           git checkout automated/update-google-fonts 2>/dev/null || git checkout -b automated/update-google-fonts
@@ -47,4 +48,4 @@ jobs:
           git push --set-upstream origin automated/update-google-fonts
       - name: Open pull request
         run: |
-          gh pr create --fill --body "Update Google Fonts"
+          gh pr create --fill --body "Update Google Fonts" --head update-google-fonts --base canary
