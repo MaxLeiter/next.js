@@ -7,6 +7,8 @@ on:
   workflow_dispatch:
 
 env:
+  PNPM_VERSION: 7.24.3
+  NODE_LTS_VERSION: 18
 
 jobs:
   update-fonts:
